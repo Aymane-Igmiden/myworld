@@ -1,12 +1,15 @@
+import { addDialog } from "./utils/dialog.js";
+
 export function createPlayer(k, speed) {
   k.loadSprite("bean", "sprites/person.png");
 
   const player = k.add([
-    k.pos(k.center()),
+    k.pos(k.width() / 2, k.height() /5),
     k.sprite("bean"),
     k.area(),
     k.anchor("center"),
     k.body(),
+    "player",
   ]);
 
   // Player controls

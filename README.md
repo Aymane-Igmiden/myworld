@@ -1,27 +1,15 @@
-# Folder structure
+# My world
 
-- `src` - source code for your kaboom project
-- `www` - distribution folder, contains your index.html, built js bundle and static assets
+This is a indie game based project; I'm trying to build what I'm considering my safe place.
 
+### Tools 
 
-## Development
+This is built using `Kaboom JS` library as a game enginer. This will be hosted on S3, and deployed to Cloudfront or something basic
 
-```sh
-$ npm run dev
-```
+### Code organization
 
-will start a dev server at http://localhost:8000
-
-## Distribution
-
-```sh
-$ npm run build
-```
-
-will build your js files into `www/main.js`
-
-```sh
-$ npm run bundle
-```
-
-will build your game and package into a .zip file, you can upload to your server or itch.io / newground etc.
+I'm using dialog module as a modular component; Currently I'm chaining lines until I build a holistic class to handle the whole interaction.
+For example: 
+    ->  dialog.say("Welcome to my sanctuary!");
+    ->  dialog.say("Continue!");
+    ->  dialog.say("Continue #2!");

@@ -2,9 +2,13 @@ import kaboom from "kaboom";
 import { createPlayer } from "./player.js";
 import { createWatchTower } from "./watchTower.js";
 
-const k = kaboom();
-const speed = 500;
+const k = kaboom({
+  width: window.innerWidth,
+  height: window.innerHeight,
+  scale: 1, // Keep the scale to 1 for simplicity
+});
 
+const speed = 500;
 
 // Add background
 k.loadSprite("background", "sprites/bg.png");

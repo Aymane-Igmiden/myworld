@@ -13,3 +13,8 @@ For example:
     ->  dialog.say("Welcome to my sanctuary!");
     ->  dialog.say("Continue!");
     ->  dialog.say("Continue #2!");
+
+### TODOs
+
+- Add mobile interactivity
+- Implement logic for watch tower

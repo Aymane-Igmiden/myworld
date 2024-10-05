@@ -30,7 +30,9 @@ export function createWatchTower(k) {
     // Logic for when the player is colliding with the turret
   });
 
-  watchTower.onCollideEnd(() => {});
+  watchTower.onCollideEnd(() => {
+    dialog.dismiss();
+  });
 
   return watchTower;
 }

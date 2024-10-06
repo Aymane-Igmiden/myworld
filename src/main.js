@@ -4,7 +4,7 @@ import { createWatchTower } from "./watchTower.js";
 import { scaleFactor, speed } from "./constants.js";
 import { setCamScale } from "./utils.js";
 
-k.loadSprite("map", "public/bg.png");
+k.loadSprite("map", "bg.png");
 k.setBackground(k.Color.fromHex("#000000"));
 
 k.scene("main", async () => {

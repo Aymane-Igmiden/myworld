@@ -2,7 +2,7 @@ import { displayDialogue } from "./utils";
 import { dialogueData } from "./constants";
 
 export function createWatchTower(k, player) {
-  k.loadSprite("turret", "public/turret.png");
+  k.loadSprite("turret", "turret.png");
 
   const watchTower = k.add([
     k.sprite("turret"),

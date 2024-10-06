@@ -1,7 +1,7 @@
 import { scaleFactor, speed } from "./constants";
 
 export function createPlayer(k, speed) {
-  k.loadSprite("person", "public/person.png");
+  k.loadSprite("person", "person.png");
 
   const player = k.add([
     k.pos(k.width() / 2, (k.height() * 5) / 6),

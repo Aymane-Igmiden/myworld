@@ -1,30 +1,27 @@
-import kaboom from "kaboom";
+import { k } from "./kaboomContext.js";
 import { createPlayer } from "./player.js";
 import { createWatchTower } from "./watchTower.js";
+import { scaleFactor, speed } from "./constants.js";
+import { setCamScale } from "./utils.js";
 
-const k = kaboom({
-  width: window.innerWidth,
-  height: window.innerHeight,
-  scale: 1, // Keep the scale to 1 for simplicity
+k.loadSprite("map", "public/bg.png");
+k.setBackground(k.Color.fromHex("#000000"));
+
+k.scene("main", async () => {
+  const map = k.add([k.sprite("map")], k.pos(0, 0), k.scale(scaleFactor));
+
+  const player = createPlayer(k, speed);
+  createWatchTower(k, [player]);
+
+  setCamScale(k);
+
+  k.onResize(() => {
+    setCamScale(k);
+  });
+
+  k.onUpdate(() => {
+    k.camPos(player.worldPos().x, player.worldPos().y - 100);
+  });
 });
 
-const speed = 500;
-
-// Add background
-k.loadSprite("background", "sprites/bg.png");
-k.add([
-  k.sprite("background", {
-    width: k.width(),
-    height: k.height(),
-  }),
-]);
-
-createPlayer(k, speed);
-createWatchTower(k);
-
-// Instructions text
-k.add([k.text("Press arrow keys", { width: k.width() / 2 }), k.pos(12, 12)]);
-k.add([k.text("Press esc to hide", { width: k.width() / 2 }), k.pos(12, 48)]);
-
-// Enable debugging
-debug.inspect = true;
+k.go("main");

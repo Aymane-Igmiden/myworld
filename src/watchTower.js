@@ -1,5 +1,5 @@
-import { displayDialogue } from "./utils";
-import { dialogueData } from "./constants";
+import { displayDialogue } from "./utils.js";
+import { dialogueData } from "./constants.js";
 
 export function createWatchTower(k, player) {
   k.loadSprite("turret", "turret.png");

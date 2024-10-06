@@ -1,4 +1,4 @@
-import { speed } from "./constants";
+import { speed } from "./constants.js";
 
 export function createPlayer(k) {
   k.loadSprite("person", "person.png");

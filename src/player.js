@@ -1,6 +1,6 @@
-import { scaleFactor, speed } from "./constants";
+import { speed } from "./constants";
 
-export function createPlayer(k, speed) {
+export function createPlayer(k) {
   k.loadSprite("person", "person.png");
 
   const player = k.add([
